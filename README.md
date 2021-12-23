@@ -1,10 +1,8 @@
 # Kinoart review data
 
-Kinoart ("Искусство Кино") is a russian movie review magazine, it is available online at https://kinoart.ru.
+Kinoart ("Искусство Кино") is a Russian movie review magazine, it is available online at https://kinoart.ru. Because they write in the Russian language, all movie titles are referenced in Russian as well. This can be inconvenient for any data science needs.
 
-File `./data/output.csv` contains the link between the review URL in Kinoart and the movie on [TMDB](https://www.themoviedb.org).
-
-It can be useful for further data analysis.
+File `./data/output.csv` contains the link between the review URL in Kinoart and the movie on [TMDB](https://www.themoviedb.org). It can be useful for further data analysis.
 
 ## How to run
 
