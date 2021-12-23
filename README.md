@@ -6,6 +6,8 @@ File [`./data/output.csv`](https://github.com/agentcooper/kinoart-review-data/bl
 
 ## How to run
 
+With [Node](https://nodejs.org/en/):
+
 ```bash
 # Updates ./data/output.csv
 node ./src/update.js
