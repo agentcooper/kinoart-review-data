@@ -1,8 +1,8 @@
 # Kinoart review data
 
-Kinoart ("Искусство Кино") is a Russian movie review magazine, it is available online at https://kinoart.ru. Because they write in the Russian language, all movie titles are referenced in Russian as well. This can be inconvenient for any data science needs.
+Kinoart ("Искусство Кино") is a Russian movie review magazine, it is available online at https://kinoart.ru. Because they write in the Russian, all movie titles are referenced in Russian as well. This can be inconvenient for any data science needs.
 
-File [`./data/output.csv`](https://github.com/agentcooper/kinoart-review-data/blob/main/data/output.csv) contains the link between the review URL in Kinoart and the movie on [TMDB](https://www.themoviedb.org). It can be useful for further data analysis.
+File [`./data/output.csv`](https://github.com/agentcooper/kinoart-review-data/blob/main/data/output.csv) matches the supposed Russian title from the Kinoart review with the English movie title on [TMDB](https://www.themoviedb.org). It can be useful for further data analysis.
 
 ## How to run
 
@@ -17,9 +17,9 @@ The script caches all network requests using local files.
 
 ## Further use
 
-I did this to check which of my watched movies have a review from Kinoart magazine.
+I did this to check which of my watched movies have a review from the Kinoart magazine.
 
-I track my movies on Letterboxd and I can get a [CSV export from there](https://letterboxd.com/settings/data/), with the [xsv](https://github.com/BurntSushi/xsv) tool, I can do:
+To match a [CSV export from Letterboxd](https://letterboxd.com/settings/data/) against the review data, I can use the [xsv](https://github.com/BurntSushi/xsv) tool:
 
 ```bash
 % xsv join Name ~/Downloads/letterboxd-evilagentcooper-2021-12-23-20-10-utc/watched.csv Title ./data/output.csv | xsv select 'Name,Review URL'
