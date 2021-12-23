@@ -7,7 +7,7 @@ File [`./data/output.csv`](https://github.com/agentcooper/kinoart-review-data/bl
 ## How to run
 
 ```bash
-# update ./data/output.csv
+# Updates ./data/output.csv
 node ./src/update.js
 ```
 
