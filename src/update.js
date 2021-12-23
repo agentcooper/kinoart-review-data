@@ -5,7 +5,7 @@ import { join } from "path";
 
 import Papa from "papaparse";
 
-import { fetchPost, fetchPosts, findTitleAndYear } from "./kinoart.js";
+import { fetchPost, fetchPosts, extractTitleAndYear } from "./kinoart.js";
 import { search } from "./tmdb.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -81,7 +81,7 @@ async function main() {
     }
 
     const fullPost = await fetchPost(slug);
-    const { title, year } = findTitleAndYear(fullPost);
+    const { title, year } = extractTitleAndYear(fullPost);
 
     const found = await findMovieOrTV(title, year, slug);
 

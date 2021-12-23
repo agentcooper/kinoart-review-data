@@ -81,7 +81,7 @@ function extractYear(input) {
   return undefined;
 }
 
-export function findTitleAndYear(post) {
+export function extractTitleAndYear(post) {
   const { caption } = post.post.thumbnail;
 
   const captionTitle = extractQuoted(caption);
