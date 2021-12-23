@@ -13,13 +13,14 @@ node ./src/update.js
 
 ## Notes
 
-The script caches all network requests using local files.
+- The script caches all network requests using local files.
+- The supposed Russian title of the movie is being guessed from the photo caption and the review title.
 
 ## Further use
 
 I did this to check which of my watched movies have a review from the Kinoart magazine.
 
-To match a [CSV export from Letterboxd](https://letterboxd.com/settings/data/) against the review data, I can use the [xsv](https://github.com/BurntSushi/xsv) tool:
+To match a [CSV export from Letterboxd](https://letterboxd.com/settings/data/) against the review data, you can use the [xsv](https://github.com/BurntSushi/xsv) tool:
 
 ```bash
 % xsv join Name ~/Downloads/letterboxd-evilagentcooper-2021-12-23-20-10-utc/watched.csv Title ./data/output.csv | xsv select 'Name,Review URL'
