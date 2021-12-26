@@ -10,7 +10,7 @@ With [Node](https://nodejs.org/en/):
 
 ```bash
 # Updates ./data/output.csv
-node ./src/update.js
+./bin/update.js
 ```
 
 ## Notes
@@ -33,3 +33,5 @@ Interstellar,http://kinoart.ru/reviews/nulevaya-gravitatsiya-anton-dolin-o-filme
 The Shining,http://kinoart.ru/reviews/ded-s-batey-stsepilis-po-pyani-doktor-son-po-stivenu-kingu-za-i-protiv
 ...
 ```
+
+There is also `./bin/letterboxd-recent.js`.

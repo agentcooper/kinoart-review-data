@@ -3,7 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "./src/update.js",
+  "bin": {
+    "kinoart-update": "./bin/update.js",
+    "kinoart-letterboxd-recent": "./bin/letterboxd-recent.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

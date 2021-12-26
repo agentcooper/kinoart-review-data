@@ -1,6 +1,9 @@
 import fetch from "node-fetch";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 
+import { join } from "path";
+import { __dirname } from "./path.js";
+
 function toFileName(url) {
   return Buffer.from(url).toString("base64").replace(/\//g, "_");
 }
@@ -10,7 +13,7 @@ export async function fetchWithCache(
   { directory = "cache", cacheKey, afterFetch = () => {} }
 ) {
   const fileName = `${toFileName(cacheKey)}`;
-  const path = `./${directory}/${fileName}`;
+  const path = join(__dirname, "../", directory, fileName);
 
   if (existsSync(path)) {
     return readFileSync(path, { encoding: "utf-8" });

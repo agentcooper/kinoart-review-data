@@ -1,33 +1,10 @@
-import { readFileSync, writeFileSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import { join } from "path";
+#!/usr/bin/env node
 
-import Papa from "papaparse";
+import { fetchPost, fetchPosts, extractTitleAndYear } from "../src/kinoart.js";
+import { search } from "../src/tmdb.js";
+import { getCorrections, getItems, saveItems } from "../src/data.js";
 
-import { fetchPost, fetchPosts, extractTitleAndYear } from "./kinoart.js";
-import { search } from "./tmdb.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const OUTPUT_CSV_PATH = join(__dirname, "../data/output.csv");
-
-const corrections = JSON.parse(
-  readFileSync(join(__dirname, "../data/corrections.json"), {
-    encoding: "utf-8",
-  })
-);
-
-function getItems() {
-  try {
-    return Papa.parse(readFileSync(OUTPUT_CSV_PATH, { encoding: "utf-8" }), {
-      header: true,
-    }).data;
-  } catch (e) {
-    return [];
-  }
-}
+const corrections = getCorrections();
 
 async function findMovieOrTV(title, year, slug) {
   if (corrections[slug]) {
@@ -111,15 +88,7 @@ async function main() {
     });
   }
 
-  items.sort((a, b) => {
-    return b.Year - a.Year;
-  });
-
-  writeFileSync(OUTPUT_CSV_PATH, toCSV(items));
-}
-
-function toCSV(items) {
-  return Papa.unparse(items);
+  saveItems(items);
 }
 
 main();
