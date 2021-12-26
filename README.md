@@ -4,9 +4,11 @@ Kinoart ("Искусство Кино") is a Russian movie review magazine, it i
 
 File [`./data/output.csv`](https://github.com/agentcooper/kinoart-review-data/blob/main/data/output.csv) matches the supposed Russian title from the Kinoart review with the English movie title on [TMDB](https://www.themoviedb.org). It can be useful for further data analysis.
 
-## How to run
+## Setup
 
-With [Node](https://nodejs.org/en/):
+Install [Node](https://nodejs.org/en/), then `npm install`.
+
+## How to run
 
 ```bash
 # Updates ./data/output.csv
